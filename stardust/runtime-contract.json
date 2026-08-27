@@ -1,0 +1,10 @@
+{
+  "runtime": "vanilla-eds",
+  "blockWrapperClass": "block",
+  "buttonClasses": ".button / .button.primary (strong) / .button.secondary (em) / .button.accent (strong+em), in p.button-wrapper",
+  "buttonization": "formatted-only",
+  "fragmentScriptPolicy": "inert-innerHTML",
+  "fragmentsRunDecorateMain": true,
+  "emptySectionCollapse": true,
+  "notes": "Verified from scripts/scripts.js: decorateButtons requires authored strong/em; loadFragment runs decorateMain so nav/footer get buttons+sections+section-metadata."
+}

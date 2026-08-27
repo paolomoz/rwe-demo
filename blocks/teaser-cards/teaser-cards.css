@@ -1,0 +1,117 @@
+/* teaser-cards — card row (default) + icons variant */
+main .section.teaser-cards-container {
+  padding: 56px 0;
+}
+
+/* section head authored as default content above the block (contact row) */
+main .section.teaser-cards-container .default-content-wrapper {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+main .section.teaser-cards-container .default-content-wrapper h2 {
+  color: var(--blue);
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.teaser-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* default cards */
+.teaser-cards .card {
+  background: #f4f4f2;
+  display: flex;
+  flex-direction: column;
+}
+
+.teaser-cards .card-media {
+  height: 210px;
+  background: #b9c6cf center / cover no-repeat;
+}
+
+.teaser-cards .card-body {
+  padding: 24px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.teaser-cards .card-body h3 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--blue);
+}
+
+.teaser-cards .card-body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--blue);
+  flex: 1;
+}
+
+.teaser-cards .card-body .button-wrapper {
+  margin: 0;
+}
+
+.teaser-cards .card-body a.button.secondary {
+  align-self: flex-start;
+}
+
+/* icons variant (contact) */
+.teaser-cards.icons {
+  text-align: center;
+  gap: 40px;
+}
+
+.teaser-cards.icons .card {
+  background: transparent;
+  align-items: center;
+}
+
+.teaser-cards.icons .card-media.icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  background: center / contain no-repeat;
+}
+
+.teaser-cards.icons .card-body {
+  padding: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+.teaser-cards.icons .card-body h3 {
+  color: var(--blue);
+  margin-bottom: 0;
+}
+
+.teaser-cards.icons .card-body p {
+  flex: 0;
+}
+
+.teaser-cards.icons .readmore {
+  color: var(--teal);
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.teaser-cards.icons .readmore::after {
+  content: "→";
+}
+
+@media (max-width: 900px) {
+  .teaser-cards {
+    grid-template-columns: 1fr;
+  }
+}

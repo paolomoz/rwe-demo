@@ -1,0 +1,162 @@
+/* energy-field — grey band, 3-col tile grid */
+main .section.energy-field-container {
+  background: var(--grey-bg);
+  padding: 56px 0;
+}
+
+.energy-field .field-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(240px, auto);
+  gap: 30px;
+}
+
+.energy-field .tile h3 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.energy-field .tile p {
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.energy-field .readmore {
+  color: var(--teal);
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.energy-field .readmore::after {
+  content: "→";
+}
+
+/* feature: video card with overlaid white text */
+.energy-field .tile-feature {
+  grid-column: span 2;
+  position: relative;
+  min-height: 590px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  color: #fff;
+  background: #2f5a3a center / cover no-repeat;
+}
+
+.energy-field .tile-feature .tile-vid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.energy-field .tile-feature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(transparent 45%, rgb(0 0 0 / 50%));
+}
+
+.energy-field .tile-feature > h3,
+.energy-field .tile-feature > p,
+.energy-field .tile-feature > a {
+  position: relative;
+  z-index: 2;
+}
+
+.energy-field .tile-feature h3,
+.energy-field .tile-feature p {
+  color: #fff;
+}
+
+.energy-field .tile-feature .readmore,
+.energy-field .tile-feature .readmore::after {
+  color: #fff;
+}
+
+/* teal info card */
+.energy-field .tile-info {
+  background: var(--teal);
+  color: #fff;
+  padding: 36px 32px;
+  min-height: 590px;
+}
+
+.energy-field .tile-info h3 {
+  color: #fff;
+}
+
+.energy-field .info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.energy-field .info-list li {
+  border-bottom: 1px solid rgb(255 255 255 / 40%);
+  padding: 12px 0;
+}
+
+.energy-field .info-list li:first-child {
+  border-top: 1px solid rgb(255 255 255 / 40%);
+}
+
+.energy-field .info-list li a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.energy-field .info-list li a::after {
+  content: "→";
+  color: #fff;
+}
+
+/* white content cards */
+.energy-field .tile-card {
+  background: #fff;
+  padding: 30px 30px 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.energy-field .tile-card h3 {
+  color: var(--blue);
+}
+
+.energy-field .tile-card p {
+  color: var(--blue);
+  flex: 1;
+}
+
+.energy-field .tile-card .readmore {
+  color: var(--teal);
+}
+
+@media (max-width: 900px) {
+  .energy-field .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .energy-field .tile-feature,
+  .energy-field .tile-info {
+    grid-column: auto;
+    min-height: auto;
+  }
+
+  .energy-field .tile-feature {
+    min-height: 320px;
+  }
+}

@@ -1,37 +1,116 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
+/* hero — full-bleed stage with frosted panel */
+
+/* break the block out of the constrained section wrapper */
+main .section.hero-container {
+  margin: 0;
+}
+
+main .section.hero-container > div {
+  max-width: none;
   padding: 0;
 }
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  background: #9fb2c3 center / cover no-repeat;
+  background-image: url("https://www.rwe.com/-/media/RWE/images/homepage/STA01-energie-fuer-die-zukunft.jpg?db=web&mw=1280&hash=572921808958CB8DC532727DC95A46FD");
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
-
-.hero img {
-  object-fit: cover;
+.hero .container {
+  position: relative;
+  max-width: var(--container);
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-@media (width >= 900px) {
+.hero .hero-panel {
+  max-width: 800px;
+  padding: 36px 44px;
+  border-radius: 2px;
+  background: rgb(255 255 255 / 72%);
+  backdrop-filter: blur(2px);
+}
+
+.hero .hero-panel h1 {
+  margin: 0 0 14px;
+  color: var(--blue);
+  font-size: 68px;
+  line-height: 74px;
+  white-space: nowrap;
+}
+
+.hero .hero-panel .sub {
+  margin: 0 0 26px;
+  color: var(--blue);
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
+}
+
+.hero .hero-panel .button-wrapper {
+  margin: 0;
+}
+
+.hero .hero-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  color: rgb(255 255 255 / 85%);
+  font-size: 40px;
+  pointer-events: none;
+}
+
+.hero .hero-dots {
+  position: absolute;
+  bottom: 34px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero .hero-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 55%);
+  border: 2px solid rgb(255 255 255 / 85%);
+}
+
+.hero .hero-dots span.active {
+  background: #fff;
+}
+
+@media (max-width: 900px) {
   .hero {
-    padding: 40px 32px;
+    height: auto;
+    min-height: 600px;
+    padding: 120px 0 60px;
+  }
+
+  .hero .hero-panel {
+    max-width: 100%;
+  }
+
+  .hero .hero-panel h1 {
+    font-size: 40px;
+    line-height: 44px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding-top: 110px;
   }
 }

@@ -1,0 +1,101 @@
+/* spotlight */
+main .section.spotlight-container {
+  background: #fff;
+  padding: 44px 0;
+}
+
+.spotlight {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  align-items: start;
+}
+
+.spotlight .spot-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.spotlight .spot-head .ic {
+  color: var(--teal);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.spotlight .spot-head h2 {
+  margin: 0;
+  color: var(--teal);
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.spotlight .spot-body {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 16px;
+}
+
+.spotlight .spot-bullets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--teal);
+}
+
+.spotlight .spot-bullets .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.spotlight .spot-bullets .dot.sm {
+  width: 9px;
+  height: 9px;
+  background: var(--mint);
+}
+
+.spotlight .spot-text h3 {
+  margin: 0 0 2px;
+  color: var(--blue);
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.spotlight .spot-text p {
+  margin: 0 0 14px;
+  color: var(--blue);
+}
+
+.spotlight .spot-text .readmore {
+  color: var(--teal);
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spotlight .spot-text .readmore::after {
+  content: "→";
+}
+
+.spotlight .spot-thumb {
+  width: 320px;
+  height: 200px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #0b3a4a, #00a19f);
+}
+
+@media (max-width: 900px) {
+  .spotlight {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlight .spot-thumb {
+    width: 100%;
+  }
+}

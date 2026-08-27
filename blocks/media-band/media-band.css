@@ -1,0 +1,110 @@
+/* media-band — full-bleed video band with right-aligned text */
+main .section.media-band-container {
+  margin: 0;
+}
+
+main .section.media-band-container > div {
+  max-width: none;
+  padding: 0;
+}
+
+.media-band {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 600px;
+  background: #2b3540;
+  color: #fff;
+}
+
+.media-band .band-vid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* default (trading): gradient overlay across the whole band */
+.media-band:not(.cta-card)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(100deg, rgb(43 53 64 / 72%) 0%, rgb(29 68 119 / 55%) 42%, rgb(10 143 150 / 72%) 100%);
+}
+
+.media-band .container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.media-band .box {
+  max-width: 460px;
+}
+
+.media-band .box h3 {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.media-band .box p {
+  margin: 0 0 24px;
+  color: #fff;
+}
+
+.media-band .box .button-wrapper {
+  margin: 0;
+}
+
+/* trading: white-outline secondary CTA on the dark band */
+.media-band a.button.secondary {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.media-band a.button.secondary:hover {
+  background: rgb(255 255 255 / 15%);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* cta-card (careers jobs): floating teal→navy gradient card */
+.media-band.cta-card {
+  min-height: 400px;
+}
+
+.media-band.cta-card .box {
+  max-width: 410px;
+  padding: 40px 40px 44px;
+  color: #fff;
+  background: linear-gradient(45deg, #1d4477 22%, #00a19f);
+}
+
+.media-band.cta-card .box h3 {
+  font-size: 28px;
+  line-height: 34px;
+  margin-bottom: 14px;
+}
+
+.media-band.cta-card .box p {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .media-band .box,
+  .media-band.cta-card .box {
+    max-width: none;
+  }
+}
